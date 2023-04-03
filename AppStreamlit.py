@@ -68,20 +68,21 @@ def main():
         # Convierte el archivo cargado a un DataFrame
         data2 = pd.read_csv(uploaded_file)
         # st.write(data)
-        
+        st.subheader('Resultados:')
+        st.subheader('0 si es viable otorgar el prestamo')
+        st.subheader('0 si debe ser negado ')
         if model == 'Regresion logistica':
             
             predicciones= modelo_LR2.predict(data2)
+           
         else:
             
             predicciones= modelo_RF4.predict(data2)
-
+        
+        st.write(predicciones)
     
-    st.subheader('Resultados:')
-    st.subheader('0 si es viable otorgar el prestamo')
-    st.subheader('0 si debe ser negado ')
 
-    st.write(predicciones)    
+        
        
        
 
