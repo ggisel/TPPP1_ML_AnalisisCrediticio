@@ -76,7 +76,7 @@ def main():
             
             predicciones= modelo_RF4.predict(data2)
 
-    nombres_valores = list(map(lambda x: "Denegar" if x == 0 else "Aceptar", valores))
+    nombres_valores = list(map(lambda x: "Denegar" if x == 0 else "Aceptar", predicciones))
 
     st.write(nombres_valores)    
        
