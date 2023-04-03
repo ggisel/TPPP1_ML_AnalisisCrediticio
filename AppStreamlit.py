@@ -71,14 +71,14 @@ def main():
         
         if model == 'Regresion logistica':
             
-            st.write(modelo_LR2.predict(data2))
+            predicciones= modelo_LR2.predict(data2)
         else:
             
-            st.write(modelo_RF4.predict(data2))
+            predicciones= modelo_RF4.predict(data2)
 
+    nombres_valores = list(map(lambda x: "Denegar" if x == 0 else "Aceptar", valores))
 
-
-        
+    st.write(nombres_valores)    
        
        
 
