@@ -1,48 +1,16 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 # importamos la libreria de streamlit para la interfaz de usuario
 import streamlit as st
 import pickle
 import pandas as pd
-from io import StringIO
-
-
-# In[3]:
-
 
 filename = 'ML_RFmodel4_Analisis_crediticio'
 
-filename2 = 'ML_LRmodel2_Analisis_crediticio'
-# In[4]:
-
+filename2='ML_LRmodel2_Analisis_crediticio'
 
 modelo_RF4= pickle.load(open(filename,'rb'))
 modelo_LR2= pickle.load(open(filename,'rb'))
 
-# In[5]:
 
-
-modelo_RF4.get_params()
-
-
-# In[6]:
-
-
-#Creamos la funcion para clasificar a los clientes segun lo que nos devuelva el modelo
-def classify(num):
-    if num == 0:
-        return 'tipo 0'
-    elif num == 1:
-        return 'tipo 1'
-    else:
-        return 'tipo 2'
-
-
-# In[1]:
 
 
 def main():
@@ -70,7 +38,7 @@ def main():
         # st.write(data)
         st.subheader('Resultados:')
         st.caption('0 si es viable otorgar el prestamo')
-        st.caption('0 si debe ser negado ')
+        st.caption('1 si debe ser negado ')
         if model == 'Regresion logistica':
             
             predicciones= modelo_LR2.predict(data2)
@@ -82,20 +50,11 @@ def main():
         st.write(predicciones)
     
 
-        
-       
-       
 
-
-
-# In[8]:
 
 
 if __name__ == '__main__':
     main()
-
-
-# In[ ]:
 
 
 
