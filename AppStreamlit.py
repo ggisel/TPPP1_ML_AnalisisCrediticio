@@ -2,7 +2,6 @@ import streamlit as st
 from analisis_crediticio import *
 import pandas as pd
 
-
 st.set_page_config(page_title="Analisis crediticio con ML", layout="wide")
 st.image('https://imageup.me/images/1bc21b54-ecb1-4fde-a7c6-582acb7cc4a8.png')
 
